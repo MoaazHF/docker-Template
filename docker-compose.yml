@@ -3,36 +3,36 @@ services:
     # build:
     #   context: .
     #   dockerfile: Dockerfile
-    image: #WRITE 
-    container_name: task-manager-app-robinFood
+    image: #WRITE your image name
+    container_name: #WRITE your container name
     ports:
-      - "3000:3000"
+      - #"3000:3000" #WRITE your port
     environment:
-      DB_HOST: db
-      DB_PORT: 5432
-      DB_USERNAME: postgres
-      DB_PASSWORD: 1610
-      DB_NAME: task-management
-      PORT: 3000
+      DB_HOST:
+      DB_PORT:
+      DB_USERNAME:
+      DB_PASSWORD:
+      DB_NAME:
+      PORT:
     depends_on:
       db:
         condition: service_healthy
     restart: on-failure
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/tasks"]
+      test: ["CMD", "wget", "-qO-", "Write your api link"]
       interval: 10s
       timeout: 5s
       retries: 5
 
   db:
     image: postgres:14-alpine
-    container_name: task-robinFood-db
+    container_name:
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 1610
-      POSTGRES_DB: task-management
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      POSTGRES_DB: 
     ports:
-      - "5432:5432"
+      - "5432:5432" #Write your port mapping here
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: always

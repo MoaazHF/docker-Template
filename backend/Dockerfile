@@ -10,7 +10,7 @@ FROM base AS deps
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 RUN --mount=type=cache,id=pnpm-backend,target=/pnpm/store \
-    pnpm install --frozen-lockfile --prefer-offline
+  pnpm install --frozen-lockfile --prefer-offline
 
 FROM base AS builder
 WORKDIR /app
@@ -32,7 +32,7 @@ COPY --from=builder /app/package.json ./package.json
 RUN mkdir -p /app/frontend/dist
 
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
-  CMD wget -qO- http://localhost:3000/api/tasks || exit 1
+  CMD wget -qO- your api url  || exit 1
 
 USER app
 EXPOSE 3000
