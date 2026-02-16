@@ -66,7 +66,7 @@ cd your-repo-name
 Create a .env file in the root directory:
 
 Code snippet
-# Database Configuration
+# .env config
 ```.env
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=secret_password
