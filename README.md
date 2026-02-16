@@ -52,3 +52,32 @@ This template is perfect for:
 │   └── ...
 ├── docker-compose.yml      # Orchestration file
 └── .env                    # Environment Variables (Not committed)
+
+
+🚀 Getting Started
+Prerequisites
+Docker & Docker Compose installed.
+
+1. Clone the Repository
+Bash
+git clone [https://github.com/yourusername/your-repo-name.git](https://github.com/yourusername/your-repo-name.git)
+cd your-repo-name
+2. Configure Environment
+Create a .env file in the root directory:
+
+Code snippet
+# Database Configuration
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=secret_password
+POSTGRES_DB=task-management
+DB_HOST=db
+3. Run the Application
+Bash
+docker-compose up --build
+Wait until you see the health checks pass. Then open your browser:
+
+Frontend: http://localhost (Running on Nginx Port 80)
+
+Backend API: http://localhost:3000
+
+Database: localhost:5432
